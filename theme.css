@@ -44,10 +44,6 @@ SOFTWARE.
 /* PLANNED UPDATES
 * Excalidraw Support
 */
-/* ----- TODO ----- */
-/* Github upload */
-/* Reference Github on my buy me a coffee page */
-/* Finish theme migration (https://forum.obsidian.md/t/1-0-theme-migration-guide/42537) */
 
 @font-face {
     font-family: Scifi Title;
@@ -156,7 +152,7 @@ SOFTWARE.
 .theme-dark {
 	/* Custom Workspace Color Overrides */
 	--col-base-background: #0B1510;
-	--col-base: #318C54;
+	--col-base: #40B266;
 	--col-accent: #3FFF8C;
 	--col-accent-plus: #99E5B5;
 	--col-muted: #163F26;
@@ -224,8 +220,9 @@ body {
 	--col-ed-caret: var(--col-accent-plus);
 	--fnt-ed-title: var(--fnt-title);
 	--fnt-ed-headers: var(--fnt-head-p);
-	--line-height-ed-text: 15px;
-	--line-height-ed-headers: 35px;
+	--line-height-ed-text: 20px;
+	--line-height-ed-headers: 20px;
+	--pad-ed-headers: 5px;
 	--letterspacing-ed-headers: var(--letterspacing-txt-headers);
 	--col-ed-txt-title: var(--col-accent-plus);
 	--siz-ed-txt-title: var(--siz-txt-title);
@@ -248,9 +245,9 @@ body {
 	--col-ed-txt-italic: var(--col-accent);
 	--siz-ed-txt-italic: var(--siz-txt-p);
 	--col-ed-txt-strikethrough: var(--col-muted);
-	--col-ed-txt-highlight: var(--col-muted);
+	--col-ed-txt-highlight: var(--col-accent);
 	--siz-ed-txt-highlight: var(--siz-txt-p);
-	--col-ed-bckg-highlight: var(--col-accent);
+	--col-ed-bckg-highlight: var(--col-base);
 	--col-ed-txt-quote: var(--col-accent-plus);
 	--siz-ed-txt-quote: var(--siz-txt-p);
 	--col-ed-bckg-quote: var(--col-base-background);
@@ -268,10 +265,10 @@ body {
 	--col-ed-bckg-checkbox-full: var(--col-accent-plus);
 	--col-ed-txt-checkbox-full: var(--col-muted);
 	--col-ed-hr: var(--col-base);
-	--col-ed-txt-tableh: var(--col-muted);
-	--col-ed-txt-table: var(--col-accent);
+	--col-ed-txt-tableh: var(--col-accent-plus);
+	--col-ed-txt-table: var(--col-base);
 	--siz-ed-txt-table: var(--siz-txt-p);
-	--col-ed-bckg-tableh: var(--col-accent);
+	--col-ed-bckg-tableh: var(--col-muted);
 	--col-ed-bckg-table: var(--col-base-background);
 	--col-ed-txt-ul-bullet: var(--col-accent-plus);
 	--col-ed-txt-ol-bullet: var(--col-accent-plus);
@@ -284,8 +281,8 @@ body {
 	--col-pr-background: var(--col-base-background);
 	--fnt-pr-title: var(--fnt-title);
 	--fnt-pr-headers: var(--fnt-head-p);
-	--line-height-pr-text: 0px;
-	--line-height-pr-headers: 5px;
+	--line-height-pr-text: 20px;
+	--line-height-pr-headers: 20px;
 	--letterspacing-pr-headers: var(--letterspacing-txt-headers);
 	--col-pr-txt-title: var(--col-accent-plus);
 	--siz-pr-txt-title: var(--siz-txt-title);
@@ -308,9 +305,9 @@ body {
 	--col-pr-txt-italic: var(--col-accent);
 	--siz-pr-txt-italic: var(--siz-txt-p);
 	--col-pr-txt-strikethrough: var(--col-muted);
-	--col-pr-txt-highlight: var(--col-muted);
+	--col-pr-txt-highlight: var(--col-accent);
 	--siz-pr-txt-highlight: var(--siz-txt-p);
-	--col-pr-bckg-highlight: var(--col-accent);
+	--col-pr-bckg-highlight: var(--col-base);
 	--col-pr-txt-quote: var(--col-accent-plus);
 	--siz-pr-txt-quote: var(--siz-txt-p);
 	--col-pr-bckg-quote: var(--col-base-background);
@@ -329,10 +326,10 @@ body {
 	--col-pr-bckg-checkbox-full: var(--col-accent-plus);
 	--col-pr-txt-checkbox-full: var(--col-muted);
 	--col-pr-hr: var(--col-base);
-	--col-pr-txt-tableh: var(--col-muted);
-	--col-pr-txt-table: var(--col-muted);
+	--col-pr-txt-tableh: var(--col-accent-plus);
+	--col-pr-txt-table: var(--col-muted-plus);
 	--siz-pr-txt-table: var(--siz-txt-p);
-	--col-pr-bckg-tableh: var(--col-accent);
+	--col-pr-bckg-tableh: var(--col-base);
 	--col-pr-bckg-table: var(--col-base-background);
 	--col-pr-txt-ul-bullet: var(--col-accent-plus);
 	--col-pr-txt-ol-bullet: var(--col-accent-plus);
@@ -455,7 +452,9 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	font-family: var(--fnt-ed-headers);
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
-	padding-bottom:5px;
+	border-bottom: 2px dashed var(--col-ed-hr);
+	padding-bottom: 5px;
+	margin: 5px 0px 5px !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-2 {
 	color: var(--col-ed-txt-h2);
@@ -464,7 +463,9 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
+	margin: 5px 0px 0px !important;
 }
+
 .mod-cm6 .cm-editor .HyperMD-header-3 {
 	color: var(--col-ed-txt-h3);
 	font-size: var(--siz-ed-txt-h3);
@@ -472,6 +473,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
+	margin: 5px 0px 0px !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-4 {
 	color: var(--col-ed-txt-h4);
@@ -480,6 +482,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
+	margin: 5px 0px 0px !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-5 {
 	color: var(--col-ed-txt-h5);
@@ -488,6 +491,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
+	margin: 5px 0px 0px !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-6 {
 	color: var(--col-ed-txt-h6);
@@ -496,6 +500,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
+	margin: 5px 0px 0px !important;
 }
 
 /* Text Formatting*/
@@ -681,7 +686,9 @@ hr {
 	font-size: var(--siz-pr-txt-h1);
 	font-family: var(--fnt-pr-headers);
 	letter-spacing: var(--letterspacing-pr-headers);
-	line-height: var(--line-height-pr-headers);
+	padding-bottom: 5px;
+	border-bottom: 2px dashed var(--col-pr-hr);
+	margin-bottom: 0px;
 }
 
 .markdown-preview-view h2 {
