@@ -245,7 +245,7 @@ body {
 	--col-ed-txt-italic: var(--col-accent);
 	--siz-ed-txt-italic: var(--siz-txt-p);
 	--col-ed-txt-strikethrough: var(--col-muted);
-	--col-ed-txt-highlight: var(--col-accent);
+	--col-ed-txt-highlight: var(--col-muted-plus);
 	--siz-ed-txt-highlight: var(--siz-txt-p);
 	--col-ed-bckg-highlight: var(--col-base);
 	--col-ed-txt-quote: var(--col-accent-plus);
@@ -305,7 +305,7 @@ body {
 	--col-pr-txt-italic: var(--col-accent);
 	--siz-pr-txt-italic: var(--siz-txt-p);
 	--col-pr-txt-strikethrough: var(--col-muted);
-	--col-pr-txt-highlight: var(--col-accent);
+	--col-pr-txt-highlight: var(--col-muted-plus);
 	--siz-pr-txt-highlight: var(--siz-txt-p);
 	--col-pr-bckg-highlight: var(--col-base);
 	--col-pr-txt-quote: var(--col-accent-plus);
