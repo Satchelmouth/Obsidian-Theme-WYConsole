@@ -386,7 +386,7 @@ svg.oz-folder-toggle path:hover,
 .oz-nav-file-title-content:hover, 
 .horizontal-tab-nav-item.is-active, .horizontal-tab-nav-item.is-active:hover, .vertical-tab-nav-item.is-active, .vertical-tab-nav-item.is-active:hover,
 div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.oz-nav-file.is-active div.oz-nav-file-title-content,
-.workspace-ribbon.mod-left .clickable-icon:hover  {
+.workspace-ribbon.mod-left .clickable-icon:hover, .titlebar-button:hover  {
 	color: var(--col-txt-selectedtitles);
 	background-color: var(--col-bckg-selectedtitles);
 }
