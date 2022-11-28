@@ -40,9 +40,6 @@ SOFTWARE.
 * Kanban
 * Calendar
 * File Tree Alternative Plugin
-
-/* PLANNED UPDATES
-* Excalidraw Support
 */
 
 @font-face {
@@ -142,7 +139,7 @@ SOFTWARE.
     --text-accent: var(--col-accent-plus);
     --text-accent-hover: var(--col-important-plus);
     --interactive-normal: var(--col-base);
-    --interactive-hover: var(--col-accent);
+    --interactive-hover: var(--col-muted);
     --interactive-accent-hsl: var(--col-accent);
     --interactive-accent: var(--col-accent);
     --interactive-accent-hover: var(--col-accent-plus);
@@ -204,7 +201,7 @@ SOFTWARE.
     --text-accent: var(--col-accent-plus);
     --text-accent-hover: var(--col-important-plus);
     --interactive-normal: var(--col-base);
-    --interactive-hover: var(--col-accent);
+    --interactive-hover: var(--col-muted);
     --interactive-accent-hsl: var(--col-accent);
     --interactive-accent: var(--col-accent);
     --interactive-accent-hover: var(--col-accent-plus);	
@@ -259,6 +256,7 @@ body {
 	--col-ed-txt-hyperlink: var(--col-important);
 	--col-ed-txt-hyperlink-strikethrough: var(--col-important-muted);
 	--col-ed-txt-hyperlink-hover: var(--col-important-plus);
+	--col-ed-bckg-hyperlink-broken: var(--col-danger);
 	--col-ed-txt-p: var(--col-base);
 	--siz-ed-txt-p: var(--siz-txt-p);
 	--col-ed-bckg-checkbox-empty: var(--col-muted);
@@ -320,6 +318,7 @@ body {
 	--col-pr-text-hyperlink-unresolved: var(--col-important);
 	--col-pr-txt-hyperlink-strikethrough: var(--col-important-muted);
 	--col-pr-txt-hyperlink-hover: var(--col-important-plus);
+	--col-pr-bckg-hyperlink-broken: red;
 	--col-pr-txt-p: var(--col-base);
 	--siz-pr-txt-p: var(--siz-txt-p);
 	--col-pr-bckg-checkbox-empty: var(--col-muted);
@@ -390,7 +389,6 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	color: var(--col-txt-selectedtitles);
 	background-color: var(--col-bckg-selectedtitles);
 }
-
 
 /* File Tree Alternative and normal (inactive) Folder / file name */
 .oz-folder-name, .oz-nav-file-title, .nav-file-title-content, 
@@ -559,9 +557,18 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 }
 
 /* Hyperlink */
-.markdown-source-view.mod-cm6 .cm-link:not(.cm-highlight) .cm-underline:not(.cm-highlight), .markdown-source-view.mod-cm6:not(.cm-highlight) .cm-url:not(.cm-highlight) .cm-underline:not(.cm-highlight), .cm-s-obsidian span.cm-hmd-internal-link:not(.cm-highlight) {
+.markdown-source-view.mod-cm6 .cm-link:not(.cm-highlight) .cm-underline:not(.cm-highlight),
+ .markdown-source-view.mod-cm6:not(.cm-highlight) .cm-url:not(.cm-highlight) .cm-underline:not(.cm-highlight),
+ .cm-s-obsidian span.cm-hmd-internal-link:not(.cm-highlight)
+{
 	color: var(--col-ed-txt-hyperlink);
 	text-decoration: underline;
+}
+
+/* Highlighted Hyperlink */
+.cm-editor span.cm-highlight > .cm-underline {
+	color: var(--col-ed-txt-highlight) !important;
+	background-color: var(--col-ed-txt-hyperlink);
 }
 
 /* Hyperlink Strikethrough */
@@ -572,6 +579,12 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 /* Hyperlink Hover */
 .markdown-source-view.mod-cm6 .cm-link .cm-underline:hover, .markdown-source-view.mod-cm6 .cm-url .cm-underline, .cm-s-obsidian span.cm-hmd-internal-link:hover {
 	color: var(--col-ed-txt-hyperlink-hover);
+}
+
+/* Highlighted Hyperlink Hover*/
+.cm-editor span.cm-highlight > .cm-underline:hover {
+	color: var(--col-ed-txt-highlight) !important;
+	background-color: var(--col-ed-txt-hyperlink-hover);
 }
 
 /* Checkbox unchecked */
@@ -793,6 +806,12 @@ body:not(.default-font-color) em, body:not(.default-font-color) .cm-em {
 	text-decoration: underline;
 }
 
+/* Highlighted Hyperlink */
+.markdown-preview-view mark > .external-link, .internal-link {
+	color: var(--col-pr-txt-highlight) !important;
+	background-color: var(--col-pr-text-hyperlink);
+}
+
 /* Hyperlink Strikethrough */
 .markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
 	color: var(--col-pr-txt-hyperlink-strikethrough);
@@ -801,6 +820,17 @@ body:not(.default-font-color) em, body:not(.default-font-color) .cm-em {
 /* Hyperlink Hover */
 .markdown-rendered .external-link:hover, .markdown-rendered .internal-link:hover {
 	color: var(--col-pr-txt-hyperlink-hover);
+}
+
+/* Unresolved Hyperlink */ 
+.markdown-rendered .external-link.is-unresolved, .markdown-rendered .internal-link.is-unresolved {
+	background-color: var(--col-pr-bckg-hyperlink-broken);
+}
+
+/* Highlighted Hyperlink Hover*/
+.markdown-preview-view mark > .external-link:hover, .internal-link:hover {
+	color: var(--col-pr-txt-highlight);
+	background-color: var(--col-pr-txt-hyperlink-hover);
 }
 
 /* Unresolved Hover */
@@ -892,7 +922,7 @@ ol > li::marker, .cm-s-obsidian .cm-formatting-list {
 }
 
 /* Tags */
-a.tag {
+a.tag, a.tag:hover {
 	background-color: var(--col-pr-bckg-tag);
 	color: var(--col-pr-txt-tag);
 }

@@ -43,5 +43,3 @@ SUPPORTED PLUGINS
 * Calendar
 * File Tree Alternative Plugin
 
-PLANNED UPDATES
-* Excalidraw Support
