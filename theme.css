@@ -253,9 +253,10 @@ body {
 	--col-ed-txt-codeblock: var(--col-accent);
 	--siz-ed-txt-codeblock: var(--siz-txt-p);
 	--col-ed-bckg-codeblock: var(--col-muted);
-	--col-ed-txt-hyperlink: var(--col-important);
-	--col-ed-txt-hyperlink-strikethrough: var(--col-important-muted);
-	--col-ed-txt-hyperlink-hover: var(--col-important-plus);
+	--col-ed-hyperlink: var(--col-important);
+	--col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
+	--col-ed-hyperlink-strikethrough: var(--col-important-muted);
+	--col-ed-hyperlink-hover: var(--col-important-plus);
 	--col-ed-bckg-hyperlink-broken: var(--col-danger);
 	--col-ed-txt-p: var(--col-base);
 	--siz-ed-txt-p: var(--siz-txt-p);
@@ -314,8 +315,9 @@ body {
 	--col-pr-txt-codeblock: var(--col-accent);
 	--siz-pr-txt-codeblock: var(--siz-txt-p);
 	--col-pr-bckg-codeblock: var(--col-muted);
-	--col-pr-text-hyperlink: var(--col-important);
-	--col-pr-text-hyperlink-unresolved: var(--col-important);
+	--col-pr-txt-hyperlink: var(--col-important);
+	--col-pr-txt-hyperlink-highlight-hover: var(--col-muted-plus);
+	--col-pr-txt-hyperlink-unresolved: var(--col-important);
 	--col-pr-txt-hyperlink-strikethrough: var(--col-important-muted);
 	--col-pr-txt-hyperlink-hover: var(--col-important-plus);
 	--col-pr-bckg-hyperlink-broken: red;
@@ -557,35 +559,87 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 }
 
 /* Hyperlink */
-.markdown-source-view.mod-cm6 .cm-link:not(.cm-highlight) .cm-underline:not(.cm-highlight),
- .markdown-source-view.mod-cm6:not(.cm-highlight) .cm-url:not(.cm-highlight) .cm-underline:not(.cm-highlight),
- .cm-s-obsidian span.cm-hmd-internal-link:not(.cm-highlight)
+.markdown-source-view.mod-cm6 .cm-link:not(.cm-highlight),
+ .markdown-source-view.mod-cm6:not(.cm-highlight) .cm-url:not(.cm-highlight),
+ .cm-s-obsidian span.cm-hmd-internal-link:not(.cm-highlight),
+ .markdown-rendered .external-link, .markdown-rendered .internal-link
 {
-	color: var(--col-ed-txt-hyperlink);
+	color: var(--col-ed-hyperlink);
 	text-decoration: underline;
-}
-
-/* Highlighted Hyperlink */
-.cm-editor span.cm-highlight > .cm-underline {
-	color: var(--col-ed-txt-highlight) !important;
-	background-color: var(--col-ed-txt-hyperlink);
 }
 
 /* Hyperlink Strikethrough */
 .mod-cm6 .cm-editor .cm-strikethrough >.cm-underline {
-	color: var(--col-ed-txt-hyperlink-strikethrough) !important;
+	color: var(--col-ed-hyperlink-strikethrough) !important;
 }
 
 /* Hyperlink Hover */
-.markdown-source-view.mod-cm6 .cm-link .cm-underline:hover, .markdown-source-view.mod-cm6 .cm-url .cm-underline, .cm-s-obsidian span.cm-hmd-internal-link:hover {
-	color: var(--col-ed-txt-hyperlink-hover);
+.markdown-rendered .external-link:hover, .markdown-rendered .internal-link:hover {
+	color: var(--col-pr-txt-hyperlink-hover);
 }
 
-/* Highlighted Hyperlink Hover*/
-.cm-editor span.cm-highlight > .cm-underline:hover {
-	color: var(--col-ed-txt-highlight) !important;
-	background-color: var(--col-ed-txt-hyperlink-hover);
+/* Unresolved Hyperlink */ 
+.markdown-rendered .external-link.is-unresolved, .markdown-rendered .internal-link.is-unresolved {
+	background-color: var(--col-pr-bckg-hyperlink-broken);
 }
+
+/* Hovered Hyperlink Hover*/
+.markdown-preview-view mark > .external-link:hover, .internal-link:hover {
+	color: var(--col-ed-txt-highlight);
+}
+
+/* Unresolved Hyperlink */
+.markdown-rendered .internal-link.is-unresolved {
+	color: var(--col-ed-hyperlink);
+	text-decoration: underline;
+}
+
+/* Unresolved Hyperlink Hover */
+.markdown-rendered .external-link.is-unresolved:hover, .markdown-rendered .internal-link.is-unresolved:hover {
+	color: var(--col-ed-hyperlink-hover);
+}
+
+
+/* Highlighted Hyperlink */
+.markdown-preview-view mark > .external-link, .internal-link {
+	color: var(--col-ed-txt-highlight);
+	background-color: var(--col-ed-hyperlink);
+}
+
+/* Highlighted Hyperlink Hover */
+.markdown-preview-view mark > .external-link:hover, .internal-link:hover {
+	color: var(--col-ed-hyperlink-highlight-hover);
+	background-color: var(--col-ed-hyperlink-hover);
+}
+
+/* Hyperlink in a callout */
+.markdown-rendered .callout > .external-link, .internal-link {
+	color: var(--col-ed-text-hyperlink);
+	background-color: inherit;
+}
+
+/* Hovered Hyperlink in a callout */
+.markdown-rendered .callout > .external-link:hover, .internal-link:hover {
+	color: var(--col-pr-txt-hyperlink-hover);
+	background-color: inherit;
+}
+
+/* Hyperlink in a warning */
+.markdown-rendered .callout[data-callout="warning"] > .external-link, .internal-link {
+	background-color: inherit;
+}
+
+/* Hovered Hyperlink in a warning */
+.markdown-rendered .callout[data-callout="warning"] > .external-link:hover, .internal-link:hover {
+	color: var(--col-pr-txt-hyperlink-hover) !important;
+	background-color: inherit;
+}
+
+/* Hyperlink Strikethrough */
+.markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
+	color: var(--col-pr-txt-hyperlink-strikethrough);
+}
+
 
 /* Checkbox unchecked */
 .cm-editor input.task-list-item-checkbox {
@@ -765,8 +819,8 @@ body:not(.default-font-color) em, body:not(.default-font-color) .cm-em {
 
 /* Highlight */
 .markdown-preview-view mark {
-	color: var(--col-pr-txt-highlight);
-	background-color: var(--col-pr-bckg-highlight);
+	color: var(--col-ed-txt-highlight);
+	background-color: var(--col-ed-bckg-highlight);
 	font-size: var(--siz-pr-txt-highlight);
 }
 
@@ -800,47 +854,21 @@ body:not(.default-font-color) em, body:not(.default-font-color) .cm-em {
 	font-size: var(--siz-pr-txt-codeblock);
 }
 
-/* Hyperlink */
-.markdown-rendered .external-link, .markdown-rendered .internal-link{
-	color: var(--col-pr-text-hyperlink);
-	text-decoration: underline;
+/* Hyperlink Hover */
+.cm-editor span.cm-underline:hover {
+	color: var(--col-pr-txt-hyperlink-hover);
 }
 
 /* Highlighted Hyperlink */
-.markdown-preview-view mark > .external-link, .internal-link {
-	color: var(--col-pr-txt-highlight) !important;
-	background-color: var(--col-pr-text-hyperlink);
-}
-
-/* Hyperlink Strikethrough */
-.markdown-preview-view del > .external-link, .markdown-preview-view del > .internal-link {
-	color: var(--col-pr-txt-hyperlink-strikethrough);
-}
-
-/* Hyperlink Hover */
-.markdown-rendered .external-link:hover, .markdown-rendered .internal-link:hover {
-	color: var(--col-pr-txt-hyperlink-hover);
-}
-
-/* Unresolved Hyperlink */ 
-.markdown-rendered .external-link.is-unresolved, .markdown-rendered .internal-link.is-unresolved {
-	background-color: var(--col-pr-bckg-hyperlink-broken);
-}
-
-/* Highlighted Hyperlink Hover*/
-.markdown-preview-view mark > .external-link:hover, .internal-link:hover {
+.cm-editor span.cm-highlight > .cm-underline {
 	color: var(--col-pr-txt-highlight);
+	background-color: var(--col-pr-txt-hyperlink);
+}
+
+/* Highlighted Hyperlink Hover */
+.cm-editor span.cm-highlight > .cm-underline:hover {
+	color: var(--col-pr-txt-hyperlink-highlight-hover) !important;
 	background-color: var(--col-pr-txt-hyperlink-hover);
-}
-
-/* Unresolved Hover */
-.markdown-rendered .external-link.is-unresolved:hover, .markdown-rendered .internal-link.is-unresolved:hover {
-	color: var(--col-pr-txt-hyperlink-hover);
-}
-
-.markdown-rendered .internal-link.is-unresolved {
-	color: var(--col-pr-text-hyperlink-unresolved);
-	text-decoration: underline;
 }
 
 /*Checkbox unchecked */
@@ -856,7 +884,8 @@ body:not(.default-font-color) em, body:not(.default-font-color) .cm-em {
 }
 
 /* Checkbox Checked Content */
-.markdown-preview-view ul>li.task-list-item.is-checked {
+.markdown-preview-view ul>li.task-list-item.is-checked,
+.markdown-preview-view ul>li.task-list-item.is-checked > p {
 	color: var(--col-pr-txt-checkbox-full);
 }
 
