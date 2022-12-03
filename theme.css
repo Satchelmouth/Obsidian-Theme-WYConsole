@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
 WYConsole Theme
-Version 1.06
+Version 1.07
 Created by @Satchelmouth 
 
 Buy me a coffee:
@@ -257,6 +257,7 @@ body {
 	--col-ed-hyperlink-highlight-hover: var(--col-muted-plus);
 	--col-ed-hyperlink-strikethrough: var(--col-important-muted);
 	--col-ed-hyperlink-hover: var(--col-important-plus);
+	--col-ed-hyperlink-broken: red; /* Seems to not be possible to set this*/  
 	--col-ed-bckg-hyperlink-broken: var(--col-danger);
 	--col-ed-txt-p: var(--col-base);
 	--siz-ed-txt-p: var(--siz-txt-p);
@@ -320,7 +321,7 @@ body {
 	--col-pr-txt-hyperlink-unresolved: var(--col-important);
 	--col-pr-txt-hyperlink-strikethrough: var(--col-important-muted);
 	--col-pr-txt-hyperlink-hover: var(--col-important-plus);
-	--col-pr-bckg-hyperlink-broken: red;
+	--col-pr-hyperlink-broken: red;
 	--col-pr-txt-p: var(--col-base);
 	--siz-pr-txt-p: var(--siz-txt-p);
 	--col-pr-bckg-checkbox-empty: var(--col-muted);
@@ -580,18 +581,12 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 
 /* Unresolved Hyperlink */ 
 .markdown-rendered .external-link.is-unresolved, .markdown-rendered .internal-link.is-unresolved {
-	background-color: var(--col-pr-bckg-hyperlink-broken);
+	color: var(--col-pr-hyperlink-broken) !important;
 }
 
 /* Hovered Hyperlink Hover*/
 .markdown-preview-view mark > .external-link:hover, .internal-link:hover {
 	color: var(--col-ed-txt-highlight);
-}
-
-/* Unresolved Hyperlink */
-.markdown-rendered .internal-link.is-unresolved {
-	color: var(--col-ed-hyperlink);
-	text-decoration: underline;
 }
 
 /* Unresolved Hyperlink Hover */
