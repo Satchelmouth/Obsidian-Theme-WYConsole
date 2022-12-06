@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
 WYConsole Theme
-Version 1.0.7
+Version 1.0.8
 Created by @Satchelmouth 
 
 Buy me a coffee:
@@ -518,7 +518,8 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 }
 
 /* Strikethrough */
-.mod-cm6 .cm-editor .cm-strikethrough {
+.mod-cm6 .cm-editor .cm-strikethrough,
+span .cm-strikethrough .cm-strong {
 	color: var(--col-ed-txt-strikethrough);
 }
 
@@ -651,7 +652,9 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 }
 
 /* Checkbox checked content */
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"], .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] {
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"], .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] > .cm-strong, .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] > .cm-strong,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] > .cm-em, .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] > .cm-em {
 	color: var(--col-ed-txt-checkbox-full);
 }
 
@@ -732,6 +735,7 @@ hr {
 	background-color: var(--col-pr-background);
 	font-family: var(--fnt-pr-text);
 	letter-spacing: var(--letterspacing-pr-text);
+	font-size: var(--siz-pr-txt-p);
 }
 
 /* Headers */
@@ -796,13 +800,13 @@ hr {
 
 /* Text Formatting */
 /* Bold */
-body:not(.default-font-color) strong, body:not(.default-font-color) .cm-strong {
+strong {
 	color: var(--col-pr-txt-strong);
 	font-size: var(--siz-pr-txt-strong);
 }
 
 /* Italic */
-body:not(.default-font-color) em, body:not(.default-font-color) .cm-em {
+em {
 	color: var(--col-pr-txt-italic);
 	font-size: var(--siz-pr-txt-italic);
 }
@@ -880,7 +884,9 @@ body:not(.default-font-color) em, body:not(.default-font-color) .cm-em {
 
 /* Checkbox Checked Content */
 .markdown-preview-view ul>li.task-list-item.is-checked,
-.markdown-preview-view ul>li.task-list-item.is-checked > p {
+.markdown-preview-view ul>li.task-list-item.is-checked >*,
+.task-list-item-checkbox:checked ~ strong,
+.task-list-item-checkbox:checked ~ em {
 	color: var(--col-pr-txt-checkbox-full);
 }
 
