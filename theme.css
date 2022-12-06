@@ -519,7 +519,8 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 
 /* Strikethrough */
 .mod-cm6 .cm-editor .cm-strikethrough,
-span .cm-strikethrough .cm-strong {
+.mod-cm6 .cm-editor .cm-strikethrough >*,
+.mod-cm6 .cm-editor .cm-strikethrough ~* {
 	color: var(--col-ed-txt-strikethrough);
 }
 
@@ -568,11 +569,6 @@ span .cm-strikethrough .cm-strong {
 {
 	color: var(--col-ed-hyperlink);
 	text-decoration: underline;
-}
-
-/* Hyperlink Strikethrough */
-.mod-cm6 .cm-editor .cm-strikethrough >.cm-underline {
-	color: var(--col-ed-hyperlink-strikethrough) !important;
 }
 
 /* Hyperlink Hover */
@@ -653,9 +649,9 @@ span .cm-strikethrough .cm-strong {
 
 /* Checkbox checked content */
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"], .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"],
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] > .cm-strong, .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] > .cm-strong,
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] > .cm-em, .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] > .cm-em {
-	color: var(--col-ed-txt-checkbox-full);
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] > *, .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] > *,
+ .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] ~ * {
+	color: var(--col-ed-txt-checkbox-full) !important;
 }
 
 /* Normal text */
@@ -812,7 +808,9 @@ em {
 }
 
 /* Strikethrough */ 
-.markdown-preview-view del {
+.markdown-preview-view del,
+.markdown-preview-view del >*,
+.markdown-preview-view del ~* {
 	color: var(--col-pr-txt-strikethrough);
 }
 
@@ -884,9 +882,8 @@ em {
 
 /* Checkbox Checked Content */
 .markdown-preview-view ul>li.task-list-item.is-checked,
-.markdown-preview-view ul>li.task-list-item.is-checked >*,
-.task-list-item-checkbox:checked ~ strong,
-.task-list-item-checkbox:checked ~ em {
+.markdown-preview-view ul>li.task-list-item.is-checked > *,
+.task-list-item-checkbox:checked ~ * {
 	color: var(--col-pr-txt-checkbox-full);
 }
 
