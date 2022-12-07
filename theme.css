@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
 WYConsole Theme
-Version 1.0.8
+Version 1.0.9
 Created by @Satchelmouth 
 
 Buy me a coffee:
@@ -723,6 +723,22 @@ hr {
 }
 
 
+/* -------- PDFs -------- */
+@media print { 
+    html body .print .markdown-preview-view { 
+        -webkit-print-color-adjust: exact; 
+		background-color: var(--col-pr-background);
+		color: var(--col-pr-txt-p);
+		width: 100%;
+		height: 100%;
+	}
+	div {
+		background-image: url("imgUrlHere") !important;
+		background-repeat: repeat-y !important;
+  }
+
+}
+
 /* ---------- WORKSPACE --------- */
 /* -------- PREVIEW MODE -------- */
 
@@ -952,6 +968,7 @@ ol > li::marker, .cm-s-obsidian .cm-formatting-list {
 a.tag, a.tag:hover {
 	background-color: var(--col-pr-bckg-tag);
 	color: var(--col-pr-txt-tag);
+	padding-bottom: 0px;
 }
 
 /* Plugin compatibility */
