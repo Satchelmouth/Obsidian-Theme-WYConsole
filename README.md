@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
 WYConsole Theme
-Version 1.0.7
+Version 1.1
 Created by @Satchelmouth 
 
 Buy me a coffee:
