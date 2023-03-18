@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
 WYConsole Theme
-Version 1.0.9
+Version 1.1
 Created by @Satchelmouth 
 
 Buy me a coffee:
@@ -69,16 +69,20 @@ SOFTWARE.
 	--col-txt-titlebars: black;
 	
 	/* Font Sizing and Styling DECLARATIONS */
-	--siz-txt-title: 25px;
-	--siz-txt-h1: 19.5px;
-	--siz-txt-h2: 18px;
-	--siz-txt-h3: 16.5px;
-	--siz-txt-h4: 15px;
-	--siz-txt-h5: 13.5px;
-	--siz-txt-h6: 12px;
-	--siz-txt-p: 13px;
+	--siz-txt-title: 2em;
+	--siz-txt-h1: 1.75em;
+	--siz-txt-h2: 1.6em;
+	--siz-txt-h3: 1.45em;
+	--siz-txt-h4: 1.3em;
+	--siz-txt-h5: 1.15em;
+	--siz-txt-h6: 1em;
+	--siz-txt-p: 1em;
 	--letterspacing-txt-headers: 1.5px;
 	--letterspacing-txt-p: 0.5px;
+	--oz-fta-folder-font-size: 1em;
+    --oz-fta-file-font-size: 1em;
+	--folders-font-size: 1em;
+	--files-font-size: 1em;
 	--fnt-title: "Scifi Title";
 	--fnt-head-p: "ModeSeven Regular";
 }
