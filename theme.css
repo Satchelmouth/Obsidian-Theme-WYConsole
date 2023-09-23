@@ -61,6 +61,7 @@ SOFTWARE.
 	--col-accent-plus: #99E5B5;
 	--col-muted: #163F26;
 	--col-muted-plus: #020704;
+	--col-text-selection: #437254;
 	--col-important: #FFD303;
 	--col-important-muted: #3F3401;
 	--col-important-plus: #FFF2BF;
@@ -85,6 +86,7 @@ SOFTWARE.
 	--files-font-size: 1em;
 	--fnt-title: "Scifi Title";
 	--fnt-head-p: "ModeSeven Regular";
+	--text-selection: var(--col-base);
 }
 
 /* Choose colors for light theme */
@@ -139,7 +141,7 @@ SOFTWARE.
     --text-on-accent: var(--col-muted-plus);
     --text-error: var(--col-important);
     --text-success: var(--col-accent);
-    --text-selection: var(--col-muted-plus);
+	--text-selection: var(--col-text-selection);
     --text-accent: var(--col-accent-plus);
     --text-accent-hover: var(--col-important-plus);
     --interactive-normal: var(--col-base);
@@ -201,7 +203,7 @@ SOFTWARE.
     --text-on-accent: var(--col-muted-plus);
     --text-error: var(--col-important);
     --text-success: var(--col-accent);
-    --text-selection: var(--col-muted);
+	--text-selection: var(--col-text-selection);
     --text-accent: var(--col-accent-plus);
     --text-accent-hover: var(--col-important-plus);
     --interactive-normal: var(--col-base);
@@ -209,6 +211,7 @@ SOFTWARE.
     --interactive-accent-hsl: var(--col-accent);
     --interactive-accent: var(--col-accent);
     --interactive-accent-hover: var(--col-accent-plus);	
+	
 }
 
 /* -------- GLOBAL -------- */
@@ -659,7 +662,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 }
 
 /* Normal text */
-.cm-editor .cm-line {
+.cm-editor .cm-line, ::selection {
 	color: var(--col-ed-txt-p);
 	font-size: var(--siz-ed-txt-p);
 }
