@@ -445,6 +445,11 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	caret-color: var(--col-ed-caret);	
 }
 
+.mod-cm6 .cm-editor .cm-scroller::after{
+    content: "\a";
+    white-space: pre;
+}
+
 /* Headers */
 .cm-editor .inline-title {
 	color: var(--col-ed-txt-title);
