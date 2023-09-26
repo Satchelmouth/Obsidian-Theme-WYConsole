@@ -447,6 +447,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 
 .mod-cm6 .cm-editor .cm-scroller::after {
 	content:"/a";
+	white-space: pre;
 }
 
 /* Headers */
