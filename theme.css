@@ -467,7 +467,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	line-height: var(--line-height-ed-headers);
 	border-bottom: 2px dashed var(--col-ed-hr);
 	padding-bottom: 5px;
-	margin: 5px 0px 5px !important;
+	margin: 0 !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-2 {
 	color: var(--col-ed-txt-h2);
@@ -476,7 +476,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
-	margin: 5px 0px 0px !important;
+	margin: 0 !important;
 }
 
 .mod-cm6 .cm-editor .HyperMD-header-3 {
@@ -486,7 +486,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
-	margin: 5px 0px 0px !important;
+	margin: 0 !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-4 {
 	color: var(--col-ed-txt-h4);
@@ -495,7 +495,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
-	margin: 5px 0px 0px !important;
+	margin: 0 !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-5 {
 	color: var(--col-ed-txt-h5);
@@ -504,7 +504,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
-	margin: 5px 0px 0px !important;
+	margin: 0 !important;
 }
 .mod-cm6 .cm-editor .HyperMD-header-6 {
 	color: var(--col-ed-txt-h6);
@@ -513,7 +513,7 @@ div.oz-nav-file.is-active, div.oz-nav-file.is-active div.oz-nav-file-title, div.
 	letter-spacing: var(--letterspacing-ed-headers);
 	line-height: var(--line-height-ed-headers);
 	padding-bottom:5px;
-	margin: 5px 0px 0px !important;
+	margin: 0 !important;
 }
 
 /* Text Formatting*/
